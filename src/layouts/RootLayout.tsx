@@ -1,6 +1,5 @@
-import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet, Link } from "react-router-dom";
 
 export default function RootLayout() {
   const [username, setUsername] = useState("");
@@ -17,7 +16,7 @@ export default function RootLayout() {
   return (
     <div className="root-layout">
       <header>
-        <h1>Github Stalker v2</h1>
+        <Link to="/">{<h1>Github Stalker v2</h1>}</Link>
         <input
           value={username}
           onChange={handleChange}

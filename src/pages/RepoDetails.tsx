@@ -1,19 +1,20 @@
-import { useLoaderData, useParams } from "react-router-dom";
-
-type Repo = {
-  id: number;
-  name: string;
-  description: string;
-  language: string;
-};
+import { useLoaderData, useParams, useLocation } from "react-router-dom";
 
 export default function RepoDetails() {
   const { username } = useParams();
-  const repo = useLoaderData() as Repo;
-  console.log(repo);
+  const location = useLocation();
+  console.log(location.state);
+  const repo = location.state.repo
+
   return (
     <>
-      {username}'s repo : {repo.name}
+      Details about {username}'s " {repo.name} " repo :
+      <br />
+      Repo Id: {repo.id}
+      <br />
+      Description: {repo.description ? repo.description : "no description"}
+      <br />
+      Main Language: {repo.language}
     </>
   );
 }

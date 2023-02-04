@@ -1,7 +1,7 @@
 import { LoaderFunction, useLoaderData, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-type Repo = {
+export type Repo = {
   id: number;
   name: string;
   description: string;
@@ -15,11 +15,16 @@ export default function UserRepos() {
 
   return (
     <div>
+      <div>
+        user {username} has {repos.length} public repos :
+      </div>
       {repos.map((repo: Repo) => {
         return (
           <div key={repo.id}>
             <h2>
-              <Link to={`/${username}/${repo.name}`}>{repo.name}</Link>
+              <Link to={`/${username}/${repo.name}`} state={{ repo: repo }}>
+                {repo.name}
+              </Link>
             </h2>
             <p>
               {repo.description ? repo.description : "no description available"}

@@ -23,9 +23,12 @@ const PaginationButton = styled.button`
   display: flex;
   margin: 1vh;
   color: white;
+  width: 2vw;
+  justify-content: center;
   font-size: 2vh;
   background-color: steelblue;
   padding: 10px;
+  border: 1px solid black;
   border-radius: 30px;
   cursor: pointer;
 `;

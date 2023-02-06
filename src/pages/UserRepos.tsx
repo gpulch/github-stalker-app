@@ -17,28 +17,25 @@ export type Repo = {
 type Repos = [];
 
 const Message = styled.div`
-  padding: 5vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
   font-size: 3vh;
   font-weight: 600;
   color: #333;
   text-align: center;
+  align-items: center;
 `;
 
 const Grid = styled.div`
+height: 50vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   //   grid-template-rows: repeat(2, 1fr);
-  
+  border-top: 1px solid black;
   grid-gap: 5vh;
   padding: 5vh;
-
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  overflow: hidden;
-
-  background-color: #eee;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-
   text-align: center;
   font-size: 1.5vh;
   font-weight: 600;
@@ -50,13 +47,12 @@ const Grid = styled.div`
 `;
 
 const Tile = styled.div`
-  border: 1px solid #ccc;
+  border: 10px solid black;
   border-radius: 30px;
-  height: 15vh;
-  width: 25vw;
-  background-color: #fff;
-  
-
+  height: 20vh;
+  color: black;
+  overflow-wrap: break-word;
+  padding: 10px;
 
   transition: all 0.2s ease-in-out;
   &:hover {
